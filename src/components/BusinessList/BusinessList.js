@@ -1,17 +1,16 @@
 import React from 'react';
 import './BusinessList.css';
 import Business from '../Business/Business';
-
+// Sets the way a BusinessList is displayed
 class BusinessList extends React.Component {
   render (){
     return (
-      <div class="BusinessList">
-        <Business /><!-- Add Business Component here -->
-        <Business /><!-- Add Business Component here -->
-        <Business /><!-- Add Business Component here -->
-        <Business /><!-- Add Business Component here -->
-        <Business /><!-- Add Business Component here -->
-        <Business /><!-- Add Business Component here -->
+      <div className="BusinessList">
+        {
+          this.props.businesses.map(business => {
+            return <Business business={business} />
+          })
+        }
       </div>
     );
   }
